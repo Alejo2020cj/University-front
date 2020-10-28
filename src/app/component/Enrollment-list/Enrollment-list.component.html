@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Enrollment</h1>
+    <a class="btn btn-outline-success btn-sm" [routerLink]="[ '/enrollment-save' ]">New</a>
+<br>
+    <table class="table table-bordered">
+        <tr>
+            <td>EnrollmentID</td>
+            <td>CourseID</td>
+            <td>StudentID</td>
+            <td>Grade</td>
+            <td>Course</td>
+            <td>Student</td>
+        </tr>
+        <tr *ngFor="let item of enrollments">
+            <td>{{item.EnrollmentID}}</td>
+            <td>{{item.CourseID}}</td>
+            <td>{{item.StudentID}}</td>
+            <td>{{item.Grade}}</td>
+            <td>{{item.Course}}</td>
+            <td>{{item.Student}}</td>
+            <td>
+                <div class="btn-group" role="group">
+                <a class="btn btn-sm btn-outline-warnig" [routerLink]="[ '/enrollment-edit', intem.EnrollmentID ]">Edit</a>
+                <a class="btn btn-sm btn-outline-danger" [routerLink]="[ '/client-delete', intem.EnrollmentID ]">Delete</a>
+            </div>
+            </td>
+        </tr>
+    </table>
+
+</div>

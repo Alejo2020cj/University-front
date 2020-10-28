@@ -1,0 +1,63 @@
+<div class="container">
+    <h2>Delete Enrollment</h2>
+
+    <div class="for-row" *ngif="showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="for-row" *ngif="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <br>
+            <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+        </div>
+    </div>
+
+    <form #courseForm="ngForm" *ngif="enrollment">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>EnrollmentID:</label>
+                <input type="number" id="EnrollmentID" name="EnrollmentID" placeholder="Enter the Enrollment ID"
+                    class="form-control" [(ngModel)]="enrollment.EnrollmentID" readonly />
+            </div>
+
+            <div class="col-md-4">
+                <label>CourseID:</label>
+                <input type="text" id="Title" name="CourseID" placeholder="Enter the course CourseID"
+                    class="form-control" [(ngModel)]="enrollment.CourseID">
+            </div>
+
+            <div class="col-md-4">
+                <label>StudentID:</label>
+                <input type="text" id="StudentID" name="StudentID" placeholder="Enter the enrollment StudentID"
+                    class="form-control" [(ngModel)]="enrollment.StudentID">
+            </div>
+
+            <div class="col-md-4">
+                <label>Grade:</label>
+                <input type="text" id="Grade" name="Grade" placeholder="Enter the enrollment Grade" class="form-control"
+                    [(ngModel)]="enrollment.Grade">
+            </div>
+
+            <div class="col-md-4">
+                <label>Course:</label>
+                <input type="text" id="Course" name="Course" placeholder="Enter the enrollment Course"
+                    class="form-control" [(ngModel)]="enrollment.Course">
+            </div>
+
+            <div class="col-md-4">
+                <label>Student:</label>
+                <input type="text" id="Student" name="Student" placeholder="Enter the enrollment Student"
+                    class="form-control" [(ngModel)]="enrollment.Student">
+            </div>
+
+        </div>
+    </form>
+</div>

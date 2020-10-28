@@ -1,0 +1,44 @@
+<div class="container">
+    <h2>Delete CourseInstructor</h2>
+
+    <div class="for-row" *ngIf="!showMsg">
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are you Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger btn-sm" (click)="delete()">Delete</button>
+                <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="for-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+            <br>
+            <a class="btn btn-outline-danger btn-sm" [routerLink]="[ '/course-list' ]">Back</a>
+        </div>
+    </div>
+
+    <form #courseForm="ngForm" *ngIf="courseInstructor">
+        <div class="form-row">
+            <div class="col-md-4">
+                <label>ID:</label>
+                <input type="number" id="ID" name="ID" placeholder="Enter the courseInstructor ID"
+                    class="form-control" [(ngModel)]="courseInstructor.ID" readonly />
+            </div>
+
+            <div class="col-md-4">
+                <label>CourseID:</label>
+                <input type="text" id="CourseID" name="CourseID" placeholder="Enter the courseInstructor CourseID" class="form-control"
+                    [(ngModel)]="courseInstructor.CourseID">
+            </div>
+
+            <div class="col-md-4">
+                <label>InstructorID:</label>
+                <input type="text" id="InstructorID" name="InstructorID" placeholder="Enter the courseInstructor InstructorID" class="form-control"
+                    [(ngModel)]="courseInstructor.InstructorID">
+            </div>
+        </div>
+    </form>
+</div>
